@@ -35,17 +35,18 @@ module.exports = (env, argv) => {
       }),
       new ModuleFederationPlugin({
         name: 'container',
-        remotes: {
-          app1: 'app1@http://localhost:3001/remoteEntry.js',
-          app2: 'app2@http://localhost:3002/remoteEntry.js',
-        },
+        remotes: { },
         shared: {
           ...deps,
-          react: { singleton: true, eager: true, requiredVersion: deps.react },
-          'react-dom': {
+          react: {
             singleton: true,
-            eager: true,
-            requiredVersion: deps['react-dom'],
+            eager:true,
+            requiredVersion: deps.react,
+          },
+          "react-dom": {
+            singleton: true,
+            eager:true,
+            requiredVersion: deps["react-dom"],
           },
         },
       }),

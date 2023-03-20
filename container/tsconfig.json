@@ -15,7 +15,13 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": false,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "typeRoots": ["./types"],
+    "types": [
+      "node",
+      "webpack-env",
+      "webpack"
+    ],
   },
   "include": ["src"]
 }
